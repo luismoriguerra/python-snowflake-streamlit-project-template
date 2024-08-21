@@ -16,16 +16,17 @@
 
 
 ## Define env variables 
-
+.streamlit/secrets.toml
 ```
-SNOWFLAKE_ACCOUNT=
-SNOWFLAKE_USER=
-SNOWFLAKE_PASSWORD=
-SNOWFLAKE_ROLE=
-SNOWFLAKE_WAREHOUSE=
-SNOWFLAKE_DATABASE=
-SNOWFLAKE_SCHEMA=
-PRIVATE_KEY_PATH=
+[snowflake]
+account = ""
+user = ""
+password = ""
+role = ""
+warehouse = ""
+database = ""
+schema = ""
+key_path = ""
 
 ```
 
