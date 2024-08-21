@@ -1,0 +1,9 @@
+definition_version: 1
+streamlit:
+  name: "DEMO_APP"
+  query_warehouse: DBT_INSIGHTS_DEV
+  main_file: streamlit_app.py
+  env_file: environment.yml
+  pages_dir: pages/
+  additional_source_files:
+    - common/helpers.py

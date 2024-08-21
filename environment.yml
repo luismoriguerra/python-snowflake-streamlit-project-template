@@ -1,0 +1,9 @@
+name: snowflake_streamlit_env
+channels:
+  - snowflake
+dependencies:
+  - streamlit
+  - pandas
+  - snowflake-snowpark-python
+  - yaml
+  - toml
