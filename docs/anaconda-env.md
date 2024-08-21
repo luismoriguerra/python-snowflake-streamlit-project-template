@@ -26,25 +26,6 @@ You can also use pip, the standard Python package installer, to manage packages 
 3. Custom package management:
 Snowflake allows you to create and use custom Python packages, which can be uploaded to a stage and then imported in your Streamlit app.
 
-Here's a breakdown of how you can use these different approaches:
-
-Using the Snowflake Anaconda Channel:
-This is done through the environment.yml file, as shown in the previous example.
-Using pip:
-You can specify pip packages in your environment.yml file like this:
-```
-name: myenv
-channels:
-  - snowflake
-dependencies:
-  - python=3.8
-  - streamlit
-  - snowflake-snowpark-python
-  - pip
-  - pip:
-    - some-package-not-in-anaconda
-```
-
 While these options exist, it's important to note that Snowflake recommends using the Snowflake Anaconda Channel for the best compatibility and performance. When you deploy a Streamlit app to Snowflake, the system uses the environment.yml file to set up the Python environment, installing packages from the Snowflake Anaconda Channel.
 If you need packages that aren't available in the Snowflake Anaconda Channel, you can request them to be added by contacting Snowflake support. For custom or specific needs, you might need to use a combination of the Anaconda channel and custom package management.
 In summary, while Anaconda (via the Snowflake Anaconda Channel) is the primary and recommended package manager for Snowflake Streamlit apps, you have flexibility to use pip or custom package management techniques when necessary. The key is ensuring that whatever approach you use, the packages are compatible with the Snowflake environment.
