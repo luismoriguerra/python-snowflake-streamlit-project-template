@@ -8,8 +8,11 @@ create_env:
 update_env:
 	conda env update -f environment.yml --prune
 
-run:
-	conda run -n $(CONDA_ENV) streamlit run streamlit_app.py
+example:
+	conda run -n $(CONDA_ENV) streamlit run src/app_example.py
+
+dev:
+	conda run -n $(CONDA_ENV) streamlit run src/streamlit_app.py
 
 # Deploy only by GH
 deploy:

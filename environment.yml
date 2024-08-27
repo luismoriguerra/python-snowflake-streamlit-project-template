@@ -7,3 +7,5 @@ dependencies:
   - snowflake-snowpark-python
   - yaml
   - toml
+  - altair
+  - typing

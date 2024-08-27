@@ -1,3 +1,4 @@
+
 import streamlit as st
 from common.helpers import get_snowflake_connection, execute_query
 
@@ -7,10 +8,10 @@ def main():
 
     # Example of using the helper function
     conn = get_snowflake_connection()
-    
+
     # Dummy query
     query = "SELECT 1 AS one, 'Hello' AS greeting"
-    
+
     results = execute_query(conn, query)
     if results:
         st.write("Sample query result:")
