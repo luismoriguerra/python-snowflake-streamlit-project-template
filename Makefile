@@ -20,3 +20,7 @@ deploy:
 
 export_env:
 	conda env export -n $(CONDA_ENV) > environment.yml
+
+cleanpyfiles:
+	find . -name "*.pyc" -delete
+	find . -name "__pycache__" -delete

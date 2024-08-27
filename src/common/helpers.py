@@ -2,24 +2,31 @@ import os
 import streamlit as st
 import pandas as pd
 
-def get_snowflake_connection():
+
+def is_snowflake_cloud():
     try:
         from snowflake.snowpark.context import get_active_session
-        return get_active_session()
+        get_active_session()
+        return True
     except ImportError:
-        # Local development
-        import snowflake.connector
-        
-        return snowflake.connector.connect(
-            account=st.secrets["snowflake"]["account"],
-            user=st.secrets["snowflake"]["user"],
-            password=st.secrets["snowflake"]["password"],
-            private_key_file=st.secrets["snowflake"]["key_path"],
-            role=st.secrets["snowflake"]["role"],
-            warehouse=st.secrets["snowflake"]["warehouse"],
-            database=st.secrets["snowflake"]["database"],
-            schema=st.secrets["snowflake"]["schema"],
-        )
+        return False
+
+def get_snowflake_connection():
+    if is_snowflake_cloud():
+        from snowflake.snowpark.context import get_active_session
+        return get_active_session()
+
+    import snowflake.connector
+    return snowflake.connector.connect(
+        account=st.secrets["snowflake"]["account"],
+        user=st.secrets["snowflake"]["user"],
+        password=st.secrets["snowflake"]["password"],
+        private_key_file=st.secrets["snowflake"]["key_path"],
+        role=st.secrets["snowflake"]["role"],
+        warehouse=st.secrets["snowflake"]["warehouse"],
+        database=st.secrets["snowflake"]["database"],
+        schema=st.secrets["snowflake"]["schema"],
+    )
 
 def execute_query(conn, query):
     try:
