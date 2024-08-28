@@ -3,7 +3,7 @@ import pandas as pd
 from common.helpers import execute_query_pandas, get_snowflake_connection
 from components.chart import build_chart
 from services.audit_service import add_audit_record, create_audit_table
-from utils.config import *
+from common.config import *
 
 conn = get_snowflake_connection()
 

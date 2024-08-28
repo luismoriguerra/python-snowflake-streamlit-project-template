@@ -1,6 +1,6 @@
 import streamlit as st
 from common.helpers import get_snowflake_connection, execute_query, is_snowflake_cloud
-from utils.config import AUDIT_TABLE_NAME
+from common.config import AUDIT_TABLE_NAME
 from typing import Optional
 
 conn = get_snowflake_connection()

@@ -1,7 +1,7 @@
 import altair as alt
 import pandas as pd
 from typing import Optional
-from utils.config import REGISTRATION_DATE_COLUMN, REGISTRATION_COUNT_COLUMN
+from common.config import REGISTRATION_DATE_COLUMN, REGISTRATION_COUNT_COLUMN
 
 def build_chart(
     chart_df: pd.DataFrame, 
